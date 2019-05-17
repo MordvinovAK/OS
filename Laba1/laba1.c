@@ -16,20 +16,20 @@ int rv;
 		exit(1);
 		
 		case 0:
-		printf("IM CHILD!\n");
+		printf("Im child!\n");
 		printf("CHILD PID - %d\n", getpid());
-		sleep(3);
-		printf("VVEDITE KOD VOZVRATA");
+		sleep(2);
+		printf("Enter return code");
 		scanf(" %d",&rv);
-		printf("CHILD EXIT, KOD VOZVRATA = %d\n", rv);
+		printf("CHILD EXIT, RETURN CODE = %d\n", rv);
 		exit(rv);
 		
 		default:
-		printf("IM PARENT!\n");
+		printf("Im parent!\n");
 		printf("PARENT PID - %d\n", getpid());
 		wait(&rv);
-		printf("PARENT POLUCHIL KOD VOZVRATA - %d\n",WEXITSTATUS(rv));
-		printf("PRENT EXIT\n");	
+		printf("PARENT GET RETURN CODE - % d\n",WEXITSTATUS(rv));
+		printf("PARENT EXIT\n");	
 	}
 return 0;
 }
